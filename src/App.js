@@ -1,12 +1,5 @@
-
-
-
 function App() {
-  return (
-    <div className="">
-    chat App
-    </div>
-  );
+  return <div className="bg-purple-600">chat App</div>;
 }
 
 export default App;
