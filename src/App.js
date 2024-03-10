@@ -1,5 +1,11 @@
+import SignIn from "./component/SignIn";
+
 function App() {
-  return <div className="bg-purple-600">chat App</div>;
+  return (
+    <div className="">
+      <SignIn />
+    </div>
+  );
 }
 
 export default App;
