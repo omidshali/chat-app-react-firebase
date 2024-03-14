@@ -1,13 +1,15 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../dataFirebase/firebase-config";
 import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
-const SignIn = () => {
-  const cookies = new Cookies();
+const SignIn = (props) => {
+  const { setIsAuth } = props;
   const signIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       cookies.set("auth-token", result.user.refreshToken);
+      setIsAuth(true);
     } catch (err) {
       console.log(err);
     }
